@@ -43,6 +43,8 @@
             this.pasteLocationAndRotationMultiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rotateStructureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rotateAroundYawZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rotateAroundYpitchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rotateAroundXrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -52,6 +54,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.listView1 = new ListViewNF();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -109,12 +115,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.rotateAroundYpitchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rotateAroundXrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listView1 = new ListViewNF();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -183,6 +183,7 @@
             this.button3.TabIndex = 47;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // menuStrip2
@@ -301,6 +302,20 @@
             this.rotateAroundYawZToolStripMenuItem.Text = "Rotate around Z (yaw)";
             this.rotateAroundYawZToolStripMenuItem.Click += new System.EventHandler(this.rotateAroundYawZToolStripMenuItem_Click);
             // 
+            // rotateAroundYpitchToolStripMenuItem
+            // 
+            this.rotateAroundYpitchToolStripMenuItem.Name = "rotateAroundYpitchToolStripMenuItem";
+            this.rotateAroundYpitchToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.rotateAroundYpitchToolStripMenuItem.Text = "Rotate around Y (pitch)";
+            this.rotateAroundYpitchToolStripMenuItem.Click += new System.EventHandler(this.rotateAroundYpitchToolStripMenuItem_Click);
+            // 
+            // rotateAroundXrollToolStripMenuItem
+            // 
+            this.rotateAroundXrollToolStripMenuItem.Name = "rotateAroundXrollToolStripMenuItem";
+            this.rotateAroundXrollToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.rotateAroundXrollToolStripMenuItem.Text = "Rotate around X (roll)";
+            this.rotateAroundXrollToolStripMenuItem.Click += new System.EventHandler(this.rotateAroundXrollToolStripMenuItem_Click);
+            // 
             // label20
             // 
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -392,6 +407,40 @@
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 31;
             this.label1.Text = "Movement";
+            // 
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listView1.FullRowSelect = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 3);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(336, 182);
+            this.listView1.TabIndex = 34;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseUp);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Address";
+            this.columnHeader1.Width = 86;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Type";
+            this.columnHeader2.Width = 70;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Spawn Location";
+            this.columnHeader3.Width = 152;
             // 
             // panel3
             // 
@@ -1228,54 +1277,6 @@
             this.toolTip1.AutoPopDelay = 5000;
             this.toolTip1.InitialDelay = 0;
             this.toolTip1.ReshowDelay = 100;
-            // 
-            // rotateAroundYpitchToolStripMenuItem
-            // 
-            this.rotateAroundYpitchToolStripMenuItem.Name = "rotateAroundYpitchToolStripMenuItem";
-            this.rotateAroundYpitchToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.rotateAroundYpitchToolStripMenuItem.Text = "Rotate around Y (pitch)";
-            this.rotateAroundYpitchToolStripMenuItem.Click += new System.EventHandler(this.rotateAroundYpitchToolStripMenuItem_Click);
-            // 
-            // rotateAroundXrollToolStripMenuItem
-            // 
-            this.rotateAroundXrollToolStripMenuItem.Name = "rotateAroundXrollToolStripMenuItem";
-            this.rotateAroundXrollToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.rotateAroundXrollToolStripMenuItem.Text = "Rotate around X (roll)";
-            this.rotateAroundXrollToolStripMenuItem.Click += new System.EventHandler(this.rotateAroundXrollToolStripMenuItem_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.listView1.FullRowSelect = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(336, 182);
-            this.listView1.TabIndex = 34;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            this.listView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseUp);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Address";
-            this.columnHeader1.Width = 86;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Type";
-            this.columnHeader2.Width = 70;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Spawn Location";
-            this.columnHeader3.Width = 152;
             // 
             // Form1
             // 
