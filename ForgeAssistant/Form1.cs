@@ -26,9 +26,9 @@ namespace ForgeAssistant
         ItemParser IP = new ItemParser();
         public CopyPaste CP;
         string MapName = "";
-        string BasePointer = "haloreach.dll+02326708";
+        string BasePointer = "haloreach.dll+0232A4E8";
         List<string> types = new List<string>();
-        string MapNamePointer = "haloreach.dll+257848F";
+        string MapNamePointer = "haloreach.dll+872760";
         string TypePointer = "haloreach.dll+00B22FB0,0x71A8";
         List<string> MapPlayerOffset = new List<string>();
         string MonitorX = "";
