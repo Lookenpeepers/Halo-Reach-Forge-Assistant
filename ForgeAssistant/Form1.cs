@@ -26,9 +26,13 @@ namespace ForgeAssistant
         ItemParser IP = new ItemParser();
         public CopyPaste CP;
         string MapName = "";
+        //AOB to Base Pointer
+        //00 00 B4 AB F3 7F 00 00 00 00 22 00 00 00 00 00 01
         string BasePointer = "haloreach.dll+0232A4E8";
         List<string> types = new List<string>();
-        string MapNamePointer = "haloreach.dll+872760";
+        //AOB to map name (use last result)
+        //64 61 65 68 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 68 61 6C 6F 72 65 61 63 68 5C 6D 61 70 73 5C
+        string MapNamePointer = "haloreach.dll+257C26F";
         string TypePointer = "haloreach.dll+00B22FB0,0x71A8";
         List<string> MapPlayerOffset = new List<string>();
         string MonitorX = "";
@@ -517,7 +521,7 @@ namespace ForgeAssistant
                     button1.Enabled = true;
                 }
                 //button1.Enabled = true;
-                GetRollPitchYaw(listView1.SelectedItems[0].Index);
+                //GetRollPitchYaw(listView1.SelectedItems[0].Index);
             }
             else
             {

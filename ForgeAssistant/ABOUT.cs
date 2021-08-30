@@ -21,5 +21,16 @@ namespace ForgeAssistant
         {
             this.Close();
         }
+
+        private void ABOUT_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://www.paypal.com/paypalme/Lookenpeepers");
+        }
     }
 }
