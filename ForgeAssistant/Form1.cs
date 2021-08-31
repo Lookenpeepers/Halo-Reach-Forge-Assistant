@@ -331,23 +331,23 @@ namespace ForgeAssistant
                         WI.r31 = MCCMemory.ReadFloat(_SpawnAddr + "+24", "", false);
                         WI.r32 = MCCMemory.ReadFloat(_SpawnAddr + "+28", "", false);
                         WI.r33 = MCCMemory.ReadFloat(_SpawnAddr + "+2C", "", false);
-                        if (MapName == "forge_halo")
-                        {
-                            SharpDX.Matrix3x3 tm = new SharpDX.Matrix3x3();                            
-                            long plus = 0x0307D198;
-                            long inc = 0x18 * i;
-                            string tmpBase = "haloreach.dll+" + (plus + inc).ToString("X8");
-                            tm.M11 = MCCMemory.ReadFloat(tmpBase + ",0x12C","",false);
-                            tm.M12 = MCCMemory.ReadFloat(tmpBase + ",0x130","",false);
-                            tm.M13 = MCCMemory.ReadFloat(tmpBase + ",0x134", "", false);
-                            tm.M21 = MCCMemory.ReadFloat(tmpBase + ",0x13C", "", false);
-                            tm.M22 = MCCMemory.ReadFloat(tmpBase + ",0x140", "", false);
-                            tm.M23 = MCCMemory.ReadFloat(tmpBase + ",0x144", "", false);
-                            tm.M31 = MCCMemory.ReadFloat(tmpBase + ",0x14C", "", false);
-                            tm.M32 = MCCMemory.ReadFloat(tmpBase + ",0x150", "", false);
-                            tm.M33 = MCCMemory.ReadFloat(tmpBase + ",0x154", "", false);
-                            WI._matrix = tm;
-                        }
+                        //if (MapName == "forge_halo")
+                        //{
+                        //    SharpDX.Matrix3x3 tm = new SharpDX.Matrix3x3();                            
+                        //    long plus = 0x0307D198;
+                        //    long inc = 0x18 * i;
+                        //    string tmpBase = "haloreach.dll+" + (plus + inc).ToString("X8");
+                        //    tm.M11 = MCCMemory.ReadFloat(tmpBase + ",0x12C","",false);
+                        //    tm.M12 = MCCMemory.ReadFloat(tmpBase + ",0x130","",false);
+                        //    tm.M13 = MCCMemory.ReadFloat(tmpBase + ",0x134", "", false);
+                        //    tm.M21 = MCCMemory.ReadFloat(tmpBase + ",0x13C", "", false);
+                        //    tm.M22 = MCCMemory.ReadFloat(tmpBase + ",0x140", "", false);
+                        //    tm.M23 = MCCMemory.ReadFloat(tmpBase + ",0x144", "", false);
+                        //    tm.M31 = MCCMemory.ReadFloat(tmpBase + ",0x14C", "", false);
+                        //    tm.M32 = MCCMemory.ReadFloat(tmpBase + ",0x150", "", false);
+                        //    tm.M33 = MCCMemory.ReadFloat(tmpBase + ",0x154", "", false);
+                        //    WI._matrix = tm;
+                        //}
                         WorldItems.Add(WI);
                         LVI.SubItems.Add(loc.ToString());
                         listView1.Items.Add(LVI);
